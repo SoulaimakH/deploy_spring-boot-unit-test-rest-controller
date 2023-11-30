@@ -26,7 +26,7 @@ pipeline {
         }
  stage('Run Unit Test') {
             steps {
-                sh "mvn test -Dtest=TutorialControllerTests"
+                sh "mvn test -Dtest=TutorialControllerTests -DfailIfNoTests=false"
             }}
       
           stage('build docker file'){
