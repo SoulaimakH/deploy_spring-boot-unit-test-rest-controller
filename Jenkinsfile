@@ -20,11 +20,14 @@ pipeline {
         stage('build artifact') {
             steps {
                  sh "mvn clean install"
-                sh "mvn test -Dtest=TutorialControllerTests"
+                
 
             }
         }
-
+ stage('Run Unit Test') {
+            steps {
+                sh "mvn test -Dtest=TutorialControllerTests"
+            }}
       
           stage('build docker file'){
          steps{
